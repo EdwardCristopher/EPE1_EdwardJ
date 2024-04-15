@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gracias por tu mensaje</title>
+</head>
+<body>
+    <h1>Gracias por tu mensaje</h1>
+
+    <p>Nombre: <span id="nombre"></span></p>
+    <p>Teléfono: <span id="telefono"></span></p>
+    <p>Correo: <span id="correo"></span></p>
+    <p>Comuna: <span id="comuna"></span></p>
+
+    <button><a href="Formulario_Contacto.html">Volver atras</a></button>
+
+    <script>
+        var nombre = localStorage.getItem('nombre');
+        var telefono = localStorage.getItem('telefono');
+        var correo = localStorage.getItem('correo');
+        var comuna = localStorage.getItem('comuna');
+
+        document.getElementById('nombre').textContent = nombre;
+        document.getElementById('telefono').textContent = telefono;
+        document.getElementById('correo').textContent = correo;
+        document.getElementById('comuna').textContent = comuna;
+
+        localStorage.removeItem('nombre');
+        localStorage.removeItem('telefono');
+        localStorage.removeItem('correo');
+        localStorage.removeItem('comuna');
+    </script>
+</body>
+</html>

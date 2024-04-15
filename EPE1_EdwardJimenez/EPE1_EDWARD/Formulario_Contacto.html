@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacto</title>
+</head>
+<body>
+    <section>
+        <h2>Contacto</h2>
+
+        <form class="formulario">
+            <fieldset>
+                <legend>Contactános llenando todos los campos</legend>
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input class="input-text" type="text" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="campo">
+                        <label>Teléfono</label>
+                        <input class="input-text" type="tel" name="telefono" placeholder="Teléfono">
+                    </div>
+                    <div class="campo">
+                        <label>Correo</label>
+                        <input class="input-text" type="email" name="correo" placeholder="Correo">
+                    </div>
+                    <div class="campo">
+                        <label>Comuna:</label>
+                        <select class="input-text" name="comuna">
+                            <option value="Santiago">Santiago</option>
+                            <option value="Providencia">Providencia</option>
+                            <option value="Las Condes">Las Condes</option>
+                            <option value="Ñuñoa">Ñuñoa</option>
+                            <option value="La Reina">La Reina</option>
+                            <option value="Quilicura">Quilicura</option>
+                            <option value="Republica">Republica</option>
+                            <option value="Marcoleta">Marcoleta</option>
+                            <option value="Puente alto">Puente alto</option>
+                            <option value="Estacion central">Estacion Central</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="alinear-derecha flex">
+                    <input class="boton w-sm-100" type="submit" value="Enviar">
+                </div>
+            </fieldset>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.formulario').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var nombre = document.querySelector('input[name="nombre"]').value;
+                var telefono = document.querySelector('input[name="telefono"]').value;
+                var correo = document.querySelector('input[name="correo"]').value;
+                var comuna = document.querySelector('select[name="comuna"]').value;
+
+                localStorage.setItem('nombre', nombre);
+                localStorage.setItem('telefono', telefono);
+                localStorage.setItem('correo', correo);
+                localStorage.setItem('comuna', comuna)
+
+                window.location.href = 'Gracias.html';
+            });
+        });
+    </script>
+</body>
+</html>
